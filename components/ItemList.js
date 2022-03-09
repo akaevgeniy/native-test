@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchItems } from '../store/infoReducer';
+import { FlatList } from 'react-native-web';
+import Item from './Item';
 
 export default function ItemList() {
   const items = useSelector((state) => state.infoReducer.items);
@@ -15,8 +16,11 @@ export default function ItemList() {
   console.log(items);
   return (
     <View style={styles.container}>
-      <Text>{items.length !== 0 ? items[1].name : ''}</Text>
-      <StatusBar style="auto" />
+      <FlatList
+        style={styles.list}
+        data={items}
+        renderItem={({ item }) => <Item item={item} />}
+      />
     </View>
   );
 }
@@ -27,5 +31,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  list: {
+    width: '80%',
   },
 });
