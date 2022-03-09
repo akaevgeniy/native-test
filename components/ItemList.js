@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   list: {
+    marginTop: 30,
     width: '80%',
   },
 });
