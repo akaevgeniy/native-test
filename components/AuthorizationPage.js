@@ -2,13 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchItems } from '../store/infoReducer';
 import {
-  FlatList,
-  TouchableOpacity,
   StyleSheet,
   View,
   Text,
   TextInput,
-  Button,
+  TouchableHighlight,
 } from 'react-native';
 
 export default function AuthorizationPage({ navigation }) {
@@ -30,7 +28,12 @@ export default function AuthorizationPage({ navigation }) {
       </Text>
       <TextInput placeholder="Логин" />
       <TextInput placeholder="Пароль" />
-      <Button title="Войти" onPress={() => navigation.navigate('ItemList')} />
+      <TouchableHighlight
+        style={styles.button}
+        onPress={() => navigation.navigate('ItemList')}
+      >
+        <Text style={styles.buttonText}>Войти</Text>
+      </TouchableHighlight>
     </View>
   );
 }
@@ -54,5 +57,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginHorizontal: '10%',
     marginTop: 25,
+  },
+  button: {
+    backgroundColor: '#b22222',
+    width: '70%',
+    height: 30,
+    textAlign: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    padding: 5,
   },
 });
