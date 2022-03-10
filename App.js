@@ -8,6 +8,7 @@ import AuthorizationPage from './components/AuthorizationPage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text } from 'react-native';
+import { useSelector } from 'react-redux';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -40,7 +41,11 @@ export default function App() {
             options={{
               title: 'Список',
               headerLeft: false,
-              headerRight: () => <Text style={styles.rightText}>user1</Text>,
+              headerRight: () => (
+                <Text style={styles.rightText}>
+                  {useSelector((state) => state.userReducer.user)}
+                </Text>
+              ),
             }}
           />
           <Stack.Screen
@@ -48,7 +53,11 @@ export default function App() {
             component={ItemPage}
             options={{
               title: 'Элемент',
-              headerRight: () => <Text style={styles.rightText}>user1</Text>,
+              headerRight: () => (
+                <Text style={styles.rightText}>
+                  {useSelector((state) => state.userReducer.user)}
+                </Text>
+              ),
             }}
           />
         </Stack.Navigator>
