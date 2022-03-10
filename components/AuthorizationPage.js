@@ -24,8 +24,13 @@ export default function AuthorizationPage({ navigation }) {
         апреля 2017 года Facebook анонсировал React Fiber, переписанную и
         оптимизированную версию React.
       </Text>
-      <TextInput style={styles.input} placeholder="Логин" />
-      <TextInput style={styles.input} placeholder="Пароль" />
+      <TextInput maxLength={20} style={styles.input} placeholder="Логин" />
+      <TextInput
+        maxLength={20}
+        secureTextEntry={true}
+        style={styles.input}
+        placeholder="Пароль"
+      />
       <TouchableHighlight
         style={styles.button}
         onPress={() => navigation.navigate('ItemList')}
