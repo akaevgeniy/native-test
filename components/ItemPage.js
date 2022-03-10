@@ -68,11 +68,14 @@ const styles = StyleSheet.create({
     maxWidth: '90%',
     padding: 0,
     marginHorizontal: '5%',
+    fontWeight: 'bold',
+    fontSize: 15,
   },
   subtext: {
     marginTop: 20,
     maxWidth: '90%',
     padding: 0,
     marginHorizontal: '5%',
+    fontSize: 15,
   },
 });

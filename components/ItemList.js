@@ -44,5 +44,8 @@ const styles = StyleSheet.create({
   },
   touch: {
     width: '100%',
+    borderWidth: 1,
+    width: '100%',
+    marginTop: 10,
   },
 });

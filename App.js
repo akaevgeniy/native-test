@@ -22,6 +22,7 @@ export default function App() {
             headerTintColor: '#fff',
             headerTitleStyle: {
               color: 'white',
+              fontSize: 15,
             },
           }}
         >

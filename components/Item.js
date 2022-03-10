@@ -7,11 +7,9 @@ export default function Item({ item }) {
 
 const styles = StyleSheet.create({
   text: {
-    padding: 20,
-    textAlign: 'center',
-    borderRadius: 5,
-    borderWidth: 1,
-    width: '100%',
-    marginTop: 10,
+    padding: 10,
+    textAlign: 'left',
+    fontWeight: 'bold',
+    fontSize: 15,
   },
 });
