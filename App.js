@@ -40,7 +40,7 @@ export default function App() {
             component={ItemList}
             options={{
               title: 'Список',
-              headerLeft: false,
+              headerLeft: () => false,
               headerRight: () => (
                 <Text style={styles.rightText}>
                   {useSelector((state) => state.userReducer.user)}

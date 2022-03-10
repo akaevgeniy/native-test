@@ -35,13 +35,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'start',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'end',
+    alignItems: 'flex-end',
     width: '100%',
   },
   button: {
