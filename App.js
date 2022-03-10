@@ -7,6 +7,7 @@ import ItemPage from './components/ItemPage';
 import AuthorizationPage from './components/AuthorizationPage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Text } from 'react-native';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -39,6 +40,7 @@ export default function App() {
             options={{
               title: 'Список',
               headerLeft: false,
+              headerRight: () => <Text style={styles.rightText}>user1</Text>,
             }}
           />
           <Stack.Screen
@@ -46,6 +48,7 @@ export default function App() {
             component={ItemPage}
             options={{
               title: 'Элемент',
+              headerRight: () => <Text style={styles.rightText}>user1</Text>,
             }}
           />
         </Stack.Navigator>
@@ -60,5 +63,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  rightText: {
+    color: 'white',
+    fontSize: 15,
+    marginRight: 10,
   },
 });
