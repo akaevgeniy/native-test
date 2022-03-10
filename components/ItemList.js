@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   list: {
     marginTop: 20,
-    width: '80%',
+    width: '95%',
   },
   touch: {
     width: '100%',
