@@ -16,7 +16,7 @@ export default function ItemPage({ route, navigation }) {
         <Button
           style={styles.button}
           title="Выйти из аккаунта"
-          onPress={() => navigation.goBack()}
+          onPress={() => navigation.navigate('AuthorizationPage')}
         />
       </View>
     </View>
