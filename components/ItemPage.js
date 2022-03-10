@@ -1,11 +1,5 @@
-import React, { useEffect } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  TouchableHighlight,
-} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function ItemPage({ route, navigation }) {
   const { item } = route.params;
@@ -14,18 +8,18 @@ export default function ItemPage({ route, navigation }) {
       <Text style={styles.text}>{item.title}</Text>
       <Text style={styles.subtext}>{item.body}</Text>
       <View style={styles.buttonContainer}>
-        <TouchableHighlight
+        <TouchableOpacity
           style={[styles.button, styles.buttonWhite]}
           onPress={() => navigation.goBack()}
         >
           <Text style={[styles.buttonText, styles.textWhiteTheme]}>Назад</Text>
-        </TouchableHighlight>
-        <TouchableHighlight
+        </TouchableOpacity>
+        <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('AuthorizationPage')}
         >
           <Text style={styles.buttonText}>Выйти из аккаунта</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     </View>
   );

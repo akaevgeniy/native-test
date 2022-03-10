@@ -6,7 +6,8 @@ import {
   View,
   Text,
   TextInput,
-  TouchableHighlight,
+  TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
 
 export default function AuthorizationPage({ navigation }) {
@@ -25,7 +26,7 @@ export default function AuthorizationPage({ navigation }) {
 
   console.log(user);
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
       <Text style={styles.title}>Вход</Text>
       <Text style={styles.subtitle}>
         React был создан Джорданом Валке, разработчиком программного обеспечения
@@ -50,7 +51,7 @@ export default function AuthorizationPage({ navigation }) {
         style={styles.input}
         placeholder="Пароль"
       />
-      <TouchableHighlight
+      <TouchableOpacity
         style={styles.button}
         onPress={() => {
           addHandler(username);
@@ -58,8 +59,9 @@ export default function AuthorizationPage({ navigation }) {
         }}
       >
         <Text style={styles.buttonText}>Войти</Text>
-      </TouchableHighlight>
-    </View>
+      </TouchableOpacity>
+      <View style={{ height: 20 }} />
+    </KeyboardAvoidingView>
   );
 }
 
