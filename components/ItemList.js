@@ -23,7 +23,7 @@ export default function ItemList({ navigation }) {
       />
       <Button
         title="Go to Page"
-        onPress={() => navigation.navigate('ItemPage')}
+        onPress={() => navigation.navigate('ItemPage', { items })}
       />
     </View>
   );
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'start',
   },
   list: {
     marginTop: 30,
