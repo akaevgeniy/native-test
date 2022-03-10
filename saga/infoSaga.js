@@ -1,10 +1,9 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import { FETCH_ITEMS, setItems } from '../store/infoReducer';
-import data from '../utils/Json.json';
-//'https://jsonplaceholder.typicode.com/users?_limit=5'
+// 'http://z.bokus.ru/test.json'
 
 const fetchInfoFromApi = () =>
-  fetch('https://jsonplaceholder.typicode.com/users?_limit=5');
+  fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
 
 function* fetchInfoWorker() {
   const data = yield call(fetchInfoFromApi);

@@ -5,8 +5,8 @@ export default function ItemPage({ route, navigation }) {
   const { item } = route.params;
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{item.name}</Text>
-      <Text>{item.name}</Text>
+      <Text style={styles.text}>{item.title}</Text>
+      <Text style={styles.subtext}>{item.body}</Text>
       <View style={styles.buttonContainer}>
         <Button
           style={styles.button}
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'start',
     justifyContent: 'space-between',
   },
   buttonContainer: {
@@ -41,5 +41,14 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
     marginTop: 20,
+    maxWidth: '90%',
+    padding: 0,
+    marginHorizontal: '5%',
+  },
+  subtext: {
+    marginTop: 20,
+    maxWidth: '90%',
+    padding: 0,
+    marginHorizontal: '5%',
   },
 });
