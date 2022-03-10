@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchItems } from '../store/infoReducer';
+import { setUser } from '../store/userReducer';
 import {
   StyleSheet,
   View,
@@ -10,6 +10,12 @@ import {
 } from 'react-native';
 
 export default function AuthorizationPage({ navigation }) {
+  const user = useSelector((state) => state.userReducer.user);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setUser('abc'));
+  }, []);
+  console.log(user);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Вход</Text>
