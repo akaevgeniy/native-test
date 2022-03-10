@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchItems } from '../store/infoReducer';
-import { Button, FlatList } from 'react-native';
+import { Button, FlatList, TouchableOpacity } from 'react-native';
 import Item from './Item';
 
 export default function ItemList({ navigation }) {
@@ -19,7 +19,14 @@ export default function ItemList({ navigation }) {
       <FlatList
         style={styles.list}
         data={items}
-        renderItem={({ item }) => <Item item={item} />}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ItemPage', { item })}
+            style={styles.touch}
+          >
+            <Item item={item} />
+          </TouchableOpacity>
+        )}
       />
       <Button
         title="Go to Page"
@@ -39,5 +46,8 @@ const styles = StyleSheet.create({
   list: {
     marginTop: 30,
     width: '80%',
+  },
+  touch: {
+    width: '100%',
   },
 });

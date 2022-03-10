@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function ItemPage({ route, navigation }) {
-  const { items } = route.params;
+  const { item } = route.params;
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{items[1].name}</Text>
-      <Text>{items[1].name}</Text>
+      <Text style={styles.text}>{item.name}</Text>
+      <Text>{item.name}</Text>
       <View style={styles.buttonContainer}>
         <Button
           style={styles.button}

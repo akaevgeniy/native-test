@@ -1,18 +1,11 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 export default function Item({ item }) {
-  return (
-    <TouchableOpacity style={styles.touch}>
-      <Text style={styles.text}>{item.name}</Text>
-    </TouchableOpacity>
-  );
+  return <Text style={styles.text}>{item.name}</Text>;
 }
 
 const styles = StyleSheet.create({
-  touch: {
-    width: '100%',
-  },
   text: {
     padding: 20,
     textAlign: 'center',
