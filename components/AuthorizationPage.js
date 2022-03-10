@@ -14,8 +14,8 @@ import {
 export default function AuthorizationPage({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Вход</Text>
-      <Text>
+      <Text style={styles.title}>Вход</Text>
+      <Text style={styles.subtitle}>
         React был создан Джорданом Валке, разработчиком программного обеспечения
         из Facebook. На него оказал влияние XHP — компонентный HTML-фреймворк
         для PHP. Впервые React использовался в новостной ленте Facebook в 2011
@@ -41,5 +41,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'start',
+  },
+  title: {
+    marginTop: 55,
+    fontWeight: 'bold',
+    fontSize: 45,
+    color: '#B22222',
+  },
+  subtitle: {
+    color: 'silver',
+    fontSize: 15,
+    textAlign: 'center',
+    marginHorizontal: '10%',
+    marginTop: 25,
   },
 });

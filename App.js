@@ -17,17 +17,29 @@ export default function App() {
           <Stack.Screen
             name="AuthorizationPage"
             component={AuthorizationPage}
-            options={{ title: 'Вход в личный кабинет' }}
+            options={{
+              title: 'Вход в личный кабинет',
+              headerStyle: { backgroundColor: '#B22222', height: 100 },
+              headerTitleStyle: { color: 'white' },
+            }}
           />
           <Stack.Screen
             name="ItemList"
             component={ItemList}
-            options={{ title: 'Список' }}
+            options={{
+              title: 'Список',
+              headerStyle: { backgroundColor: '#B22222', height: 100 },
+              headerTitleStyle: { color: 'white' },
+            }}
           />
           <Stack.Screen
             name="ItemPage"
             component={ItemPage}
-            options={{ title: 'Элемент' }}
+            options={{
+              title: 'Элемент',
+              headerStyle: { backgroundColor: '#B22222', height: 100 },
+              headerTitleStyle: { color: 'white' },
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
