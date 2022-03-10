@@ -13,14 +13,23 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="AuthorizationPage">
+        <Stack.Navigator
+          initialRouteName="AuthorizationPage"
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#B22222',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              color: 'white',
+            },
+          }}
+        >
           <Stack.Screen
             name="AuthorizationPage"
             component={AuthorizationPage}
             options={{
               title: 'Вход в личный кабинет',
-              headerStyle: { backgroundColor: '#B22222', height: 100 },
-              headerTitleStyle: { color: 'white' },
             }}
           />
           <Stack.Screen
@@ -28,8 +37,6 @@ export default function App() {
             component={ItemList}
             options={{
               title: 'Список',
-              headerStyle: { backgroundColor: '#B22222', height: 100 },
-              headerTitleStyle: { color: 'white' },
             }}
           />
           <Stack.Screen
@@ -37,8 +44,6 @@ export default function App() {
             component={ItemPage}
             options={{
               title: 'Элемент',
-              headerStyle: { backgroundColor: '#B22222', height: 100 },
-              headerTitleStyle: { color: 'white' },
             }}
           />
         </Stack.Navigator>

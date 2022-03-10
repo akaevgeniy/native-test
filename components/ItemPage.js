@@ -15,16 +15,16 @@ export default function ItemPage({ route, navigation }) {
       <Text style={styles.subtext}>{item.body}</Text>
       <View style={styles.buttonContainer}>
         <TouchableHighlight
-          style={styles.button}
+          style={[styles.button, styles.buttonWhite]}
           onPress={() => navigation.goBack()}
         >
-          <Text>Назад</Text>
+          <Text style={[styles.buttonText, styles.textWhiteTheme]}>Назад</Text>
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.button}
           onPress={() => navigation.navigate('AuthorizationPage')}
         >
-          <Text>Выйти из аккаунта</Text>
+          <Text style={styles.buttonText}>Выйти из аккаунта</Text>
         </TouchableHighlight>
       </View>
     </View>
@@ -42,9 +42,25 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'end',
+    width: '100%',
   },
   button: {
     backgroundColor: '#b22222',
+    width: '50%',
+    height: 40,
+    textAlign: 'center',
+  },
+  buttonWhite: {
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: '#b22222',
+  },
+  buttonText: {
+    color: 'white',
+    padding: 10,
+  },
+  textWhiteTheme: {
+    color: '#b22222',
   },
   text: {
     fontWeight: 'bold',
