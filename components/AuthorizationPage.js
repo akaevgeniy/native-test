@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../store/userReducer';
 import {
@@ -10,11 +10,19 @@ import {
 } from 'react-native';
 
 export default function AuthorizationPage({ navigation }) {
+  const [username, setUsername] = useState('');
+
   const user = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setUser('abc'));
-  }, []);
+
+  const onChange = (text) => {
+    setUsername(text);
+  };
+
+  const addHandler = (text) => {
+    dispatch(setUser(text));
+  };
+
   console.log(user);
   return (
     <View style={styles.container}>
@@ -30,7 +38,12 @@ export default function AuthorizationPage({ navigation }) {
         апреля 2017 года Facebook анонсировал React Fiber, переписанную и
         оптимизированную версию React.
       </Text>
-      <TextInput maxLength={20} style={styles.input} placeholder="Логин" />
+      <TextInput
+        maxLength={20}
+        style={styles.input}
+        placeholder="Логин"
+        onChangeText={onChange}
+      />
       <TextInput
         maxLength={20}
         secureTextEntry={true}
@@ -39,7 +52,10 @@ export default function AuthorizationPage({ navigation }) {
       />
       <TouchableHighlight
         style={styles.button}
-        onPress={() => navigation.navigate('ItemList')}
+        onPress={() => {
+          addHandler(username);
+          // navigation.navigate('ItemList');
+        }}
       >
         <Text style={styles.buttonText}>Войти</Text>
       </TouchableHighlight>
