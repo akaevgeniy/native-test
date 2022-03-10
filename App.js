@@ -37,6 +37,7 @@ export default function App() {
             component={ItemList}
             options={{
               title: 'Список',
+              headerLeft: false,
             }}
           />
           <Stack.Screen

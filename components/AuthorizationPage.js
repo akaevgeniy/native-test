@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     height: 40,
     textAlign: 'center',
     marginVertical: 30,
+    borderRadius: 5,
   },
   buttonText: {
     color: 'white',
