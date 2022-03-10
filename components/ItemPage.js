@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default function ItemPage({ info }) {
+export default function ItemPage({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>{info.name}</Text>
+      <Text>Hello</Text>
+      <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
 }

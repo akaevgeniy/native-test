@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchItems } from '../store/infoReducer';
-import { FlatList } from 'react-native-web';
+import { Button, FlatList } from 'react-native';
 import Item from './Item';
 
-export default function ItemList() {
+export default function ItemList({ navigation }) {
   const items = useSelector((state) => state.infoReducer.items);
   const dispatch = useDispatch();
 
@@ -20,6 +20,10 @@ export default function ItemList() {
         style={styles.list}
         data={items}
         renderItem={({ item }) => <Item item={item} />}
+      />
+      <Button
+        title="Go to Page"
+        onPress={() => navigation.navigate('ItemPage')}
       />
     </View>
   );
