@@ -54,7 +54,7 @@ export default function AuthorizationPage({ navigation }) {
         style={styles.button}
         onPress={() => {
           addHandler(username);
-          // navigation.navigate('ItemList');
+          navigation.navigate('ItemList');
         }}
       >
         <Text style={styles.buttonText}>Войти</Text>
