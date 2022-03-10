@@ -12,12 +12,17 @@ import {
 
 export default function AuthorizationPage({ navigation }) {
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const user = useSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
 
   const onChange = (text) => {
     setUsername(text);
+  };
+
+  const onPasswordChange = (text) => {
+    setPassword(text);
   };
 
   const addHandler = (text) => {
@@ -50,8 +55,10 @@ export default function AuthorizationPage({ navigation }) {
         secureTextEntry={true}
         style={styles.input}
         placeholder="Пароль"
+        onChangeText={onPasswordChange}
       />
       <TouchableOpacity
+        disabled={!(password.length >= 3 && username.length >= 3)}
         style={styles.button}
         onPress={() => {
           addHandler(username);
@@ -60,7 +67,6 @@ export default function AuthorizationPage({ navigation }) {
       >
         <Text style={styles.buttonText}>Войти</Text>
       </TouchableOpacity>
-      <View style={{ height: 20 }} />
     </KeyboardAvoidingView>
   );
 }
