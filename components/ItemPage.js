@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { setUser } from '../store/userReducer';
+import { useDispatch } from 'react-redux';
 
 export default function ItemPage({ route, navigation }) {
   const { item } = route.params;
+  const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{item.title}</Text>
@@ -16,7 +19,10 @@ export default function ItemPage({ route, navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('AuthorizationPage')}
+          onPress={() => {
+            navigation.navigate('AuthorizationPage');
+            dispatch(setUser(''));
+          }}
         >
           <Text style={styles.buttonText}>Выйти из аккаунта</Text>
         </TouchableOpacity>
