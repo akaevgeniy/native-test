@@ -81,10 +81,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   rightBlock: {
-    flex: 1,
+    flex: 0,
     flexDirection: 'row',
-    marginRight: 10,
-    marginTop: 15,
+    alignItems: 'flex-start',
+    marginRight: 8,
   },
   rightText: {
     color: 'white',
@@ -92,6 +92,6 @@ const styles = StyleSheet.create({
     marginRight: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 8,
+    paddingTop: 5,
   },
 });
