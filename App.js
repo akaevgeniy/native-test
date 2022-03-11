@@ -7,8 +7,9 @@ import ItemPage from './components/ItemPage';
 import AuthorizationPage from './components/AuthorizationPage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { useSelector } from 'react-redux';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -42,9 +43,16 @@ export default function App() {
               title: 'Список',
               headerLeft: () => false,
               headerRight: () => (
-                <Text style={styles.rightText}>
-                  {useSelector((state) => state.userReducer.user)}
-                </Text>
+                <View style={styles.rightBlock}>
+                  <Text style={styles.rightText}>
+                    {useSelector((state) => state.userReducer.user)}
+                  </Text>
+                  <Ionicons
+                    name="md-checkmark-circle"
+                    size={32}
+                    color="white"
+                  />
+                </View>
               ),
             }}
           />
@@ -54,9 +62,16 @@ export default function App() {
             options={{
               title: 'Элемент',
               headerRight: () => (
-                <Text style={styles.rightText}>
-                  {useSelector((state) => state.userReducer.user)}
-                </Text>
+                <View style={styles.rightBlock}>
+                  <Text style={styles.rightText}>
+                    {useSelector((state) => state.userReducer.user)}
+                  </Text>
+                  <Ionicons
+                    name="md-checkmark-circle"
+                    size={32}
+                    color="white"
+                  />
+                </View>
               ),
             }}
           />
@@ -73,9 +88,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  rightBlock: {
+    flex: 1,
+    flexDirection: 'row',
+    marginRight: 8,
+    marginTop: 15,
+  },
   rightText: {
     color: 'white',
     fontSize: 15,
-    marginRight: 10,
+    marginRight: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 5,
   },
 });
