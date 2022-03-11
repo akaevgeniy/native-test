@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../store/userReducer';
 import {
@@ -49,12 +49,15 @@ export default function AuthorizationPage({ navigation }) {
         style={styles.input}
         placeholder="Логин"
         onChangeText={onChange}
+        value={username}
       />
       <TextInput
+        keyboardType="numeric"
         maxLength={20}
         secureTextEntry={true}
         style={styles.input}
         placeholder="Пароль"
+        value={password}
         onChangeText={onPasswordChange}
       />
       <TouchableOpacity
@@ -63,6 +66,8 @@ export default function AuthorizationPage({ navigation }) {
         onPress={() => {
           addHandler(username);
           navigation.navigate('ItemList');
+          setUsername('');
+          setPassword('');
         }}
       >
         <Text style={styles.buttonText}>Войти</Text>
@@ -108,5 +113,8 @@ const styles = StyleSheet.create({
     marginTop: 25,
     width: '90%',
     fontSize: 15,
+    borderBottomWidth: 1,
+    borderColor: 'silver',
+    paddingVertical: 3,
   },
 });
