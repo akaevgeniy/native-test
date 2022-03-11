@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     padding: 10,
+    textAlign: 'center',
   },
   input: {
     marginTop: 25,
