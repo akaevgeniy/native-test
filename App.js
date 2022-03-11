@@ -9,7 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, View } from 'react-native';
 import { useSelector } from 'react-redux';
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -47,11 +47,7 @@ export default function App() {
                   <Text style={styles.rightText}>
                     {useSelector((state) => state.userReducer.user)}
                   </Text>
-                  <Ionicons
-                    name="md-checkmark-circle"
-                    size={32}
-                    color="white"
-                  />
+                  <FontAwesome name="user" size={26} color="white" />
                 </View>
               ),
             }}
@@ -66,11 +62,7 @@ export default function App() {
                   <Text style={styles.rightText}>
                     {useSelector((state) => state.userReducer.user)}
                   </Text>
-                  <Ionicons
-                    name="md-checkmark-circle"
-                    size={32}
-                    color="white"
-                  />
+                  <FontAwesome name="user" size={26} color="white" />
                 </View>
               ),
             }}
@@ -91,15 +83,15 @@ const styles = StyleSheet.create({
   rightBlock: {
     flex: 1,
     flexDirection: 'row',
-    marginRight: 8,
+    marginRight: 10,
     marginTop: 15,
   },
   rightText: {
     color: 'white',
     fontSize: 15,
-    marginRight: 5,
+    marginRight: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 5,
+    paddingTop: 8,
   },
 });
