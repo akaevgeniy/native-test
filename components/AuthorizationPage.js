@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../store/userReducer';
 import {
   StyleSheet,
-  View,
   Text,
   TextInput,
   TouchableOpacity,
@@ -29,7 +28,6 @@ export default function AuthorizationPage({ navigation }) {
     dispatch(setUser(text));
   };
 
-  console.log(user);
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <Text style={styles.title}>Вход</Text>

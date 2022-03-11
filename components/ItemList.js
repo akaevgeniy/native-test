@@ -12,7 +12,6 @@ export default function ItemList({ navigation }) {
     dispatch(fetchItems());
   }, []);
 
-  console.log(items);
   return (
     <View style={styles.container}>
       <FlatList
