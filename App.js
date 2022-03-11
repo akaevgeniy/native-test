@@ -89,9 +89,9 @@ const styles = StyleSheet.create({
   rightText: {
     color: 'white',
     fontSize: 15,
-    marginRight: 4,
+    marginRight: 6,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 5,
+    paddingTop: 2,
   },
 });
