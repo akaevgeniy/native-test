@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchItems } from '../store/infoReducer';
 import { FlatList, TouchableOpacity, StyleSheet, View } from 'react-native';
 import Item from './Item';
-
+// страница со списком
 export default function ItemList({ navigation }) {
   const items = useSelector((state) => state.infoReducer.items);
   const dispatch = useDispatch();
-
+  // при монтировании срабатывает фетч запрос к серверу и добавляет данные в глобальный редакс
   useEffect(() => {
     dispatch(fetchItems());
   }, []);
-
+  // рендерим на экране данные из стейта items
   return (
     <View style={styles.container}>
       <FlatList

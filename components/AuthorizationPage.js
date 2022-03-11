@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setUser } from '../store/userReducer';
 import {
   StyleSheet,
@@ -8,26 +8,25 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
-
+// страница авторизации пользователя
 export default function AuthorizationPage({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const user = useSelector((state) => state.userReducer.user);
+  // диспатчим для дальнейшего изменения и сохранения логина юзера в зависимости от введенных данных
   const dispatch = useDispatch();
-
+  // функция изменения поля логина
   const onChange = (text) => {
     setUsername(text);
   };
-
+  // функция изменения поля пароля
   const onPasswordChange = (text) => {
     setPassword(text);
   };
-
+  // функция изменения глобального стейта редакс, вызывается при нажатии на кнопку входа
   const addHandler = (text) => {
     dispatch(setUser(text));
   };
-
+  // изначально кнопка входа не активна, если набрать логин и пароль из 3 символов, то станет активной
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <Text style={styles.title}>Вход</Text>

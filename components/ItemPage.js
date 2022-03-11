@@ -2,9 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { setUser } from '../store/userReducer';
 import { useDispatch } from 'react-redux';
-
+// страница вывода элемента
 export default function ItemPage({ route, navigation }) {
   const { item } = route.params;
+  // принимаем инфо о статье из паврамсов, при выходе сбрасываем пользователя (диспатч)
   const dispatch = useDispatch();
   return (
     <View style={styles.container}>
