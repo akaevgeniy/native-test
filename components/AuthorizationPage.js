@@ -7,7 +7,12 @@ import {
   TextInput,
   TouchableOpacity,
   KeyboardAvoidingView,
+  ImageBackground, 
+  Animated,
 } from 'react-native';
+import back from'../assets/ellipse.png';
+import pic2 from'../assets/el2.png';
+import { Easing } from 'react-native-web';
 // страница авторизации пользователя
 export default function AuthorizationPage({ navigation }) {
   const [username, setUsername] = useState('');
@@ -26,11 +31,27 @@ export default function AuthorizationPage({ navigation }) {
   const addHandler = (text) => {
     dispatch(setUser(text));
   };
+  let rotateValueHolder = new Animated.Value(0);
+  const StartImageRotationFunction = () => {
+   rotateValueHolder.setValue(0);
+   Animated.timing(rotateValueHolder, {
+     toValue: 1,
+     duration: 5000, 
+     easing: Easing.linear,
+     useNativeDriver: false,
+
+  }).start(() => StartImageRotationFunction());
+}
+
+  const RotateData = rotateValueHolder.interpolate({
+    inputRange: [0,1],
+    outputRange: ['0deg', '360deg']
+  })
   // изначально кнопка входа не активна, если набрать логин и пароль из 3 символов, то станет активной
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <Text style={styles.title}>Вход</Text>
-      <Text style={styles.subtitle}>
+      {/* <Text style={styles.subtitle}>
         React был создан Джорданом Валке, разработчиком программного обеспечения
         из Facebook. Впервые React использовался в новостной ленте Facebook в
         2011 году и позже в ленте Instagram в 2012 году. Исходный код React
@@ -40,7 +61,10 @@ export default function AuthorizationPage({ navigation }) {
         нативные Android-, iOS- и UWP-приложения с использованием React. 18
         апреля 2017 года Facebook анонсировал React Fiber, переписанную и
         оптимизированную версию React.
-      </Text>
+      </Text> */}
+<ImageBackground source={back} style={{width:288, height: 288, alignItems: 'center', justifyContent: 'center'}}>
+<Animated.Image onLoad={StartImageRotationFunction} source={pic2} style={{width:220, height: 220, transform: [{rotate: RotateData}]}}/>
+</ImageBackground>
       <TextInput
         maxLength={20}
         style={styles.input}
